@@ -1,0 +1,19 @@
+{
+  "name": "knownledga_graph",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin RAMAGE",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@types/commander": "^2.12.0",
+    "@types/node": "^22.13.1",
+    "commander": "^13.1.0"
+  }
+}

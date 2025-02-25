@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="70">
+
+        <rect width="120" height="30" x="20" y="20" stroke="#000000" fill="none" />
+        <text x="20" y="40" font-size="20">myFirstNode</text>
+        
+</svg>
