@@ -1,44 +1,38 @@
-import { AppNode } from "./icon/appNode";
-import { DatabaseNode } from "./icon/databaseNode";
+import { CommonNodeFactory } from "./icon/commonNodeFactory";
+import { InfrastructureNodeFactory } from "./icon/infrastructureNodeFactory";
 import { KubernetesNodeFactory } from "./icon/kubernetesNodeFactory";
-import { ProxyNode } from "./icon/proxyNode";
-import { UserNode } from "./icon/userNode";
 import { GraphNode } from "./node";
 
 export type NodeFactoryHandler = () => GraphNode;
 
 const nodeRegex = /^node\s*\((.+?)\)\s*/;
-const databaseRegex = /^database\s*\((.+?)\)\s*/;
-const userRegex = /^user\s*\((.+?)\)\s*/;
-const proxyRegex = /^proxy\s*\((.+?)\)\s*/;
-const appRegex = /^app\s*\((.+?)\)\s*/;
+
 
 export class NodeFactory {
 
+    private _commonFactory : CommonNodeFactory;
     private _kubernetesFactory : KubernetesNodeFactory;
+    private _infrastructureFactory : InfrastructureNodeFactory;
+    
 
     constructor() {
+        this._commonFactory = new CommonNodeFactory();
         this._kubernetesFactory = new KubernetesNodeFactory();
+        this._infrastructureFactory = new InfrastructureNodeFactory();
     }
 
     public createRules() {
-        const list : [RegExp, NodeFactoryHandler][] = this._createRules();
+        let list : [RegExp, NodeFactoryHandler][] = this._createRules();
+        list = list.concat(this._commonFactory.createRules());
+        list = list.concat(this._infrastructureFactory.createRules());
         return list.concat(this._kubernetesFactory.createRules());
     }
 
     private _createRules() : [RegExp, NodeFactoryHandler][] {
         return [
             [nodeRegex, this.createNode],
-            [databaseRegex, this.createDatabase],
-            [userRegex, this.createUserNode],
-            [proxyRegex, this.createProxyNode],
-            [appRegex, this.createAppNode]
         ]
     }
 
     public createNode() : GraphNode { return new GraphNode(); }
-    public createUserNode() : GraphNode { return new UserNode(); }
-    public createProxyNode() { return new ProxyNode(); }
-    public createAppNode() { return new AppNode(); }
-    public createDatabase() { return new DatabaseNode(); }
 }

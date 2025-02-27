@@ -1,8 +1,20 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 512 512" xml:space="preserve">
-<g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="70"
+   height="70"
+   version="1.1"
+   id="svg13826"
+   inkscape:version="0.91 r13725">
+
+        <g transform="translate(10 10) scale(0.11 0.11)">
+        <g>
 	<g>
 		<g>
 			<path d="M405.269,58.645c-55.216,0-100.771,42.147-106.189,95.96H10.77c-0.104,0-0.205,0.013-0.309,0.015
@@ -87,4 +99,7 @@
 		</g>
 	</g>
 </g>
+        </g>
+        <text x="10" y="60" font-size="20"></text>
+        
 </svg>

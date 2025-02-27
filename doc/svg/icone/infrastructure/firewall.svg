@@ -1,4 +1,20 @@
-<g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="70"
+   height="70"
+   version="1.1"
+   id="svg13826"
+   inkscape:version="0.91 r13725">
+
+        <g transform="translate(10 10) scale(0.1 0.1)">
+        <g>
 	<g>
 		<path d="M490.658,234.65H379.384c2.261-10.944,3.627-22.549,3.627-34.901c0-68.715-58.389-135.211-60.864-138.005
 			c-2.731-3.051-6.933-4.288-10.944-3.157c-3.925,1.131-6.891,4.437-7.552,8.491l-6.293,37.717
@@ -19,3 +35,7 @@
 			h-42.667v-64h42.667V319.983z"/>
 	</g>
 </g>
+        </g>
+        <text x="10" y="60" font-size="20"></text>
+        
+</svg>
