@@ -5,7 +5,7 @@ import { NodeFactory, NodeFactoryHandler } from "../graph/architecture/nodeFacto
 
 const attributesRegex = /([a-z|A-Z|0-9|\_]+)=\"(.*?)\"((?:,(?:[a-z|A-Z|0-9|\_]+)=\"(?:.*?)\")*)/;
 const commentRegex = /^#.+\r?\n?/;
-const linkRegex=/([a-z|A-Z|0-9|\_]+)--->([a-z|A-Z|0-9|\_]+)\r?\n?/;
+const linkRegex=/([a-z|A-Z|0-9|\_]+)--->([a-z|A-Z|0-9|\_]+)((.+?)\))?\r?\n?/;
 
 export class ArchitectureParser {
     private _nodeRegexs : [RegExp, NodeFactoryHandler][];
@@ -39,8 +39,8 @@ export class ArchitectureParser {
         // Comment
         let [result, newContent] = this.parseComment(content);
         if (!result) {
-            // Node
 
+            // Node
             [result, newContent] = this.parseNode(graph, content);
             if (!result) {
 
@@ -102,6 +102,22 @@ export class ArchitectureParser {
         const link = new Link();
         link.setNodeId1(match[1]);
         link.setNodeId2(match[2]);
+        if (match.length > 3) {
+            const args = this.parseAttributes(match[3]);
+
+            // Text
+            const text = this.getTextAttr(args, "text") || null;
+            if (text) {
+                link.setText(text);
+            }
+
+            // Color
+            const color = this.getTextAttr(args, "color") || "";
+            if (color != "") {
+                link.setColor(color);
+            }
+            
+        }
         graph.addLink(link);
     }
 

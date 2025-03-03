@@ -8,7 +8,7 @@
 | binary   | ![binary](./svg/icone/common/binary.svg) |
 | laptop   | ![laptop](./svg/icone/common/laptop.svg) |
 | mail     | ![mail](./svg/icone/common/mail.svg) |
-| usb      | ![proxy](./svg/icone/common/usb.svg) |
+| usb      | ![usb](./svg/icone/common/usb.svg) |
 | user     | ![user](./svg/icone/common/user.svg) |
 
 ## Infra

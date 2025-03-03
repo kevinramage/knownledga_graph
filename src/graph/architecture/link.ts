@@ -10,6 +10,8 @@ export class Link {
     protected _node2 : GraphNode | null;
     protected _position1 : IPosition | null;
     protected _position2 : IPosition | null;
+    protected _text : string | null;
+    protected _color : string;
 
     constructor() {
         this._nodeId1 = "";
@@ -18,11 +20,18 @@ export class Link {
         this._node2 = null;
         this._position1 = null;
         this._position2 = null;
+        this._text = null;
+        this._color = "#000000";
     }
 
     public toXML() {
         if (this._position1 && this._position2) {
-            return `<line x1="${this._position1.x}" y1="${this._position1.y}" x2="${this._position2.x}" y2="${this._position2.y}" style="stroke:black;stroke-width:1" />`;
+            let content = `<line x1="${this._position1.x}" y1="${this._position1.y}" x2="${this._position2.x}" y2="${this._position2.y}" style="stroke:${this._color};stroke-width:1" />`;
+            if ( this._text != null ) {
+                const fontSize = 20;
+                content += `<text x="${this._position1.x + 10}" y="${this._position1.y - 5}" font-size="${fontSize}" fill="${this._color}">${this._text}</text>`;
+            }
+            return content;
         } else {
             return "";
         }
@@ -68,5 +77,19 @@ export class Link {
     }
     public setPosition2(value: IPosition) {
         this._position2 = value;
+    }
+
+    public getText() {
+        return this._text;
+    }
+    public setText(text: string | null) {
+        this._text = text;
+    }
+
+    public getColor() {
+        return this._color;
+    }
+    public setColor(color: string) {
+        this._color = color;
     }
 }

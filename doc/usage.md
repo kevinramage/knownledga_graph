@@ -60,7 +60,17 @@ Default value is #000
 ## Link
 
 Link syntax: 
-node1 --> node2
+node1 --> node2(key1="value1",...keyX="valueX")
+
+All arguments possibles:
+
+* text: node text
+Must be a string value (maximum length authorized is XXXX)
+Default value is empty
+
+* color: text color
+Must be a string value (Can be predefined html color, hexadecimal color or rgb color)
+Default value is #000
 
 <u>simpleLink.md</u>
 ```
@@ -69,8 +79,8 @@ architecture
 node(id="node1",text="myFirstNode")
 node(id="node2",text="mySecondNode")
 node(id="nodeRes",text="myResultNode")
-node1--->nodeRes
-node2--->nodeRes
+node1--->nodeRes(text="myLink")
+node2--->nodeRes(color="#FF0000")
 \```
 ```
 
